@@ -1,23 +1,36 @@
-public class Lesson {
+public class Lesson implements Cloneable{
     private Teacher _teacher;
     private String _name;
+    private Boolean _isExists;
 
     public Lesson() {
+        this._isExists = false;
     }
 
-    public Teacher getTeacher() {
-        return _teacher;
+    public void setLesson(Teacher teacher, String name){
+        this._teacher = teacher;
+        this._name = name;
+        this._isExists = true;
     }
 
-    public void setTeacher(Teacher teacher) {
-        _teacher = teacher;
+    public Teacher getTeacher(){
+        return this._teacher;
     }
 
     public String getName(){
-        return _name;
+        return this._name;
     }
 
-    public void setName(String name){
-        this._name = name;
+    public Boolean IsExist(){
+        return this._isExists;
+    }
+
+    @Override
+    public Lesson clone() {
+        try {
+            return (Lesson) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

@@ -27,7 +27,7 @@ public class Teacher {
         return this._freeHoursRemain;
     }
 
-    public String GetName(){
+    public String getName(){
         return this._name;
     }
 }

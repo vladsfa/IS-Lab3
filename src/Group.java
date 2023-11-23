@@ -25,4 +25,12 @@ public class Group {
     public void setLessons(Map<String, Integer> lessons) {
         _lessons = lessons;
     }
+
+    public Integer getTotalHours(){
+        Integer res = 0;
+        for (String lessonName : this._lessons.keySet()){
+            res += this._lessons.get(lessonName);
+        }
+        return res;
+    }
 }
